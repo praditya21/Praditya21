@@ -1,46 +1,109 @@
-<html>
 <head>
-<title>Latihan Java Script </title>
-<h4><i><u><font face="times new roman" size="+2" color ="#993300">Biodata Putu</font></u></i></h4>
-<body><pre><script language ="javascript">
-var nama="Putu Ariana";
-var namapgl="Arik";
-var tempat_lahir="Salupangkang 3";
-var alamat="Jln.Rapocini Raya Lr.8";
-var hoby="Memancing";
-var tanggal_lahir="19 september 1996";
-var jnkel="Laki-Laki";
-var agama="Hindu";
-document.write("Nama Anda                           : "+ nama + "</br>");
-document.write("Nama Pangilan                       : "+ namapgl + "</br>");
-document.write("Tempat Lahir                        : "+ tempat_lahir + "</br>");
-document.write("Alamat                              : "+ alamat + "</br>");
-document.write("Hoby Anda                           : "+ hoby + "</br>");
-document.write("Tanggal Lahir                       : "+ tanggal_lahir + "</br>");
-document.write("Jenis Kelamin                       : "+ jnkel + "</br>");
-document.write("Agama                               : "+ agama + "</br>");
-document.write("<br>============================================================================================"+"</b>");
+  <title>Tugas Ibu Novira</title>
 
-</script>
-<h4><i><u><font face="times new roman" size="+2" color ="#993300">Data Pendidikan</font></u><i></h4>
-<script language ="javascript">
-var SD="SD INPRES TAPPILINA"
-var SMP="SMP NEGERI 1 TOPOYO";
-var SMA_SMK="SMK NEGERI 1 TOPOYO";
-var Kampus="UNIVERSITAS INDONESIA TIMUR";
-var fakultas="FAKULTAS ILMU KOMPUTER";
-var kls="Bk-14";
-var akg="2014";
-document.write("SD Anda                             : "+ SD + "</br>");
-document.write("SMP Anda                            : "+ SMP + "</br>"); 
-document.write("SMA/SMK Anda                        : "+ SMA_SMK + "</br>");
-document.write("Kampus Anda                         : "+ Kampus + "</br>");
-document.write("Fakultas Anda                       : "+ fakultas + "</br>");
-document.write("Kelas                               : "+ kls + "</br>");
-document.write("Angkatan                            : "+ akg + "</br>");
-document.write("<br>============================================================================================"+"</b>");
-</script>
-</pre>
-</body>
+  <body>
+
+  <td><h3 align='center'>Data Mahasiswa <br> Kampus Akademi Komunitas </h3> </td><hr>
+
+  <script type="text/javascript">
+  function cek(){
+    nim=document.getElementById('nim').value;
+    nama=document.getElementById('nama').value;
+    jenis=document.getElementById('jenis').value;
+    agama=document.getElementById('agama').value;
+    prodi=document.getElementById('prodi').value;
+   komentar=document.getElementById('komentar').value;
+
+   if(nim==''||nim==null){
+      document.getElementById('e_nim').innerHTML="Harus diisi";
+      return false;
+      }
+
+    if(nama==''||nama==null){
+      document.getElementById('e_nama').innerHTML="Harus diisi";
+      return false;
+      }
+
+    if(jenis=='-'||jenis==''||jenis==null){
+      document.getElementById('e_jenis').innerHTML="Harus diisi";
+      return false;
+      }
+
+    if(agama=='-'||agama==''||agama==null){
+      document.getElementById('e_agama').innerHTML="Harus diisi";
+      return false;
+      }
+
+      if(prodi=='-'||prodi==''||prodi==null){
+      document.getElementById('e_prodi').innerHTML="Harus diisi";
+      return false;
+       }
+
+    if(komentar==''||komentar==null){
+      document.getElementById('e_komentar').innerHTML="Harus diisi";
+      return false;
+      }
+
+  if(nim!=''&& nama!=''&& jenis!='-'&&  agama!='-' && prodi!='-'&& komentar!='') {
+      document.getElementById('Hasil').innerHTML="Nim="+nim+"<br> Nama="+nama+"<br> Jenis_Kelamin="+jenis+"<br> Agama="+agama+" <br>Prodi="+prodi+"<br> Komentar="+komentar;
+      return false;
+    }
+    }
+      </script>
 </head>
+
+<body>
+ <form id="latihan" onsubmit="return cek();" >
+<table align="center">
+
+<tr><td>Nim</td>
+  <td><input type="text" id="nim"></td>
+  <td> <div id="e_nim"></div> </td>  </tr><br>
+
+<tr>
+  <td> Nama </td>
+  <td> <input type="text" id="nama"></td> 
+  <td> <div id="e_nama"></div></td></tr><br>    
+
+<tr><td>Jenis Kelamin </td>
+  <td><select id="jenis">
+  <option value="-">-pilih-</option>
+  <option value="L">Laki-laki</option>
+  <option value="P">Perempuan</option></td>
+  </select> 
+  <td><div id="e_jenis"></div></td></tr><br>
+
+<tr>
+  <td> Agama</td> 
+  <td> <select id="agama">
+  <option value = "-pilih-" /> pilih 
+  <option value = "Islam" /> Islam 
+  <option value = "Kristen" /> Kristen
+  <option value = "Katolik" /> Katolik 
+  <option value = "Budha" /> Budha
+  <option value = "Hindu" /> Hindu </select>
+  <div id="e_agama"></div></td></tr><br>
+
+<tr> <td>Prodi </td>
+  <td> <select id="prodi">
+  <option value="-">-Pilih Prodi-</option>
+  <option value="1">Sistem Informasi</option>
+  <option value="Teknik Informatika">Teknik Informatika</option>
+  <option value="3">Manajemen Informatika</option>
+  <option value="4">Sistem Informatika</option>
+  <option value="5">Teknik Komputer</option></td>
+  </select>
+  <td><div id="e_prodi"></div></td> </tr><br>
+
+<tr><td>Komentar</td>
+  <td> <textarea id="komentar" cols="15" rows="5"></textarea></td>
+  <td> <div id="e_komentar"></div> </td></tr> <br>
+
+ <tr>
+<td><input type="submit" value="Ok"></td></tr>
+<tr><td> <p id="Hasil">Silahkan diisi Form di atas</p></td> </tr> 
+ </form>
+
+</table>
+</body>
 </html>
